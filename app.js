@@ -49,6 +49,19 @@ app.get('/customers', (req, res) => {
         );
     });
 });
+app.get('/orders', (req, res) => {
+    const query = 'SELECT * FROM orders';
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        console.log("data arrived");
+        res.json(results
+        );
+    });
+});
 app.get('/customers/:customerID', async (req, res) => {
     try {
         const { customerID } = req.params;
@@ -79,4 +92,5 @@ app.get('/customers/:customerID', async (req, res) => {
 const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+  console.log(process.env.DB_HOST)
 })
