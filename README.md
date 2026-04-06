@@ -55,7 +55,7 @@ Project demonstrates analysis of live data from deployed real  time database
 
      Automated Refresh Pipeline
 ![Schema
-](/other%20files/Schem%20and%20architecture.png)
+](images/Schem%20and%20architecture.png)
 
 ### Datase and API's
 
