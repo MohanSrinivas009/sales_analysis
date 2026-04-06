@@ -107,7 +107,7 @@ The following preprocessing steps were performed before creating the dashboard:
     + Shipping Delay
     + ShipDate - OrderDate
 
-![Datamodel](/other%20files/Data%20Model.png)
+![Datamodel](/images/Data%20Model.png)
 
 __Relationships__
 
@@ -117,7 +117,7 @@ __Relationships__
 
 ## Dashboard preview & Visualizations
 
-![Overview](/other%20files//Overview.png), ![product performance](/other%20files/Product%20performance.png), ![Sales](/other%20files/Sales.png), ![Profits & Margin](/other%20files/Profit%20&%20Margin.png)
+![Overview](/images//Overview.png), ![product performance](/images/Product%20performance.png), ![Sales](/images/Sales.png), ![Profits & Margin](/images/Profit%20&%20Margin.png)
 + Sales Trend by Month
 + Sales by Region
 + Sales by Customer Segment
