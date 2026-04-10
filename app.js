@@ -49,7 +49,7 @@ app.get('/orders', (req, res) => {
     });
 
 });
-app.get('/products', (req, res) => {
+app.get('/Products', (req, res) => {
     const query = 'SELECT * FROM Products';
 
     pool.query(query, (err, results) => {
