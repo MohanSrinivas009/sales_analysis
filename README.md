@@ -59,20 +59,20 @@ Project demonstrates analysis of live data from deployed real  time database
 
 ### Datase and API's
 
-    MySQL Database (Railway / InfinityFree / Render)
+    MySQL Database (Railway)
             ↓
     Python ETL Script using Pandas
             ↓
-    REST API using Flask / FastAPI
+    REST API using Nodejs, postman
             ↓
-    Hosted API on Render / Railway
+    Hosted API on Railway
             ↓
     Power BI Connected to API Endpoint
 The project database is hosted on a cloud platform called [Railway](https://railway.com/project/056ab463-9ae5-4855-a91d-8ae09eb53e17?) so the dashboard can access updated sales data from anywhere.
 
 Express.js used to build RestFul API's to extract sales data to Power BI.
 
-    GET /api/sales
+    GET /api/orders
     GET /api/customers
     GET /api/products
 ## Tools & Technologies

@@ -2,20 +2,6 @@ import express from 'express'
 import mysql from 'mysql2'
 import dotenv from 'dotenv'
 
-// const connection = mysql.createConnection({
-//   host: 'gondola.proxy.rlwy.net',
-//   user: 'root',
-//   password: 'mgqOPePsHrwrwtLZwxQIlDjHLAolcnGa',
-//   database: 'railway',
-//   port: 49743
-// });
-// connection.connect(err => {
-//   if (err) {
-//     console.error('DB Error:', err);
-//   } else {
-//     console.log('Connected!');
-//   }
-// });
 const pool = mysql.createPool({
   host: process.env.DB_HOST ,
   user: process.env.DB_USER ,
@@ -61,6 +47,21 @@ app.get('/orders', (req, res) => {
         res.json(results
         );
     });
+
+});
+app.get('/products', (req, res) => {
+    const query = 'SELECT * FROM products';
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        console.log("data arrived");
+        res.json(results
+        );
+    });
+
 });
 app.get('/customers/:customerID', async (req, res) => {
     try {
