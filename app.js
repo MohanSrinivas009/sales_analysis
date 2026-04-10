@@ -50,7 +50,7 @@ app.get('/orders', (req, res) => {
 
 });
 app.get('/products', (req, res) => {
-    const query = 'SELECT * FROM products';
+    const query = 'SELECT * FROM Products';
 
     pool.query(query, (err, results) => {
         if (err) {
