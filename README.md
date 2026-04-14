@@ -57,7 +57,7 @@ Project demonstrates analysis of live data from deployed real  time database
 ![Schema
 ](images/Schem%20and%20architecture.png)
 
-### Datase and API's
+### Database and API's
 
     MySQL Database (Railway)
             ↓
