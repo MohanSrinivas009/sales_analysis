@@ -75,6 +75,19 @@ app.get('/Products/top', (req, res) => {
     });
 
 });
+app.get('/CategorySales', (req, res) => {
+    const query = 'Select Round(sum(o.Sales),2) as total_sales, p.Category from orders o join Products p on o.productID=p.ProductID group by p.Category order by total_sales desc';
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        console.log("data arrived");
+        res.json(results
+        );
+    });
+});
 app.get('/Products/:ProductID', async (req, res) => {
     try {
         const { ProductID } = req.params;  
