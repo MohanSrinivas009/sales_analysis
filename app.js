@@ -61,6 +61,20 @@ app.get('/Products', (req, res) => {
     });
 
 });
+app.get('/Products/top', (req, res) => {
+    const query = 'Select sum(o.Sales) as total_sales, p.subCategory from orders o join Products p on o.productID=p.ProductID group by p.subCategory order by total_sales desc LIMIT 5';
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        console.log("data arrived");
+        res.json(results
+        );
+    });
+
+});
 app.get('/customers/:customerID', async (req, res) => {
     try {
         const { customerID } = req.params;
