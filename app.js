@@ -75,6 +75,30 @@ app.get('/Products/top', (req, res) => {
     });
 
 });
+app.get('/Products/:ProductID', async (req, res) => {
+    try {
+        const { ProductID } = req.params;  
+
+        const [rows] = await pool.promise().query(
+            'SELECT * FROM Products WHERE ProductID = ?',
+            [ProductID]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
+            });
+        }
+
+        res.json(rows[0]);
+    } catch (err) {
+        res.status(500).json({
+            error: err.message
+        });
+    }
+});
+
 app.get('/customers/:customerID', async (req, res) => {
     try {
         const { customerID } = req.params;
